@@ -4,25 +4,11 @@ publisher_inverse_kinematics_controller:
     controller_name: "joint_trajectory_controller"
     wait_sec_between_publish: 6
 
-    #goal_names: ["pos1", "pos2", "pos3", "pos4"]
-    #pos1: [-90.0, 90.0, 90.0, 0.6, -0.109, 0.3]   #ZYZ Euler angle(d) and position(m)
-    #pos2: [-90.0, 90.0, 90.0, 0.4, -0.109, 0.6]
-    #pos3: [-90.0, 90.0, 90.0, 0.4, -0.3, 0.6]
-    #pos4: [-90.0, 90.0, 90.0, 0.4, -0.3, 0.3]
-    goal_names: ["pos1", "pos2", "pos3", "pos4","pos5", "pos6", "pos7", "pos8", "pos9", "pos10", "pos11", "pos12","pos13"]
-    pos1: [-89.9, -179.9, -59.9, 0.2, -0.109, 0.3]     #ZYZ Euler angle(d) and position(m)
-    pos2: [-89.9, -179.9, -59.9, 0.57, 0.19, -0.0]
-    pos3: [-89.9, -179.9, -59.9, 0.57, 0.19, -0.033]
-    pos4: [-89.9, -179.9, -59.9, 0.57, 0.19, -0.0]
-    pos5: [-89.9, -179.9, -59.9, 0.57, 0.215, -0.0]
-    pos6: [-89.9, -179.9, -59.9, 0.57, 0.215, -0.033]
-    pos7: [-89.9, -179.9, -59.9, 0.57, 0.215, -0.0]
-    pos8: [-89.9, -179.9, -59.9, 0.59, 0.215, -0.0]
-    pos9: [-89.9, -179.9, -59.9, 0.59, 0.215, -0.03]
-    pos10: [-89.9, -179.9, -59.9, 0.59, 0.215, -0.0]
-    pos11: [-89.9, -179.9, -59.9, 0.59, 0.195, -0.0]
-    pos12: [-89.9, -179.9, -59.9, 0.59, 0.195, -0.027]
-    pos13: [-89.9, -179.9, -59.9, 0.59, 0.195, -0.0]
+    goal_names: ["pos1", "pos2", "pos3", "pos4"]
+    pos1: [-90.0, 90.0, 90.0, 0.6, -0.109, 0.3]   #ZYZ Euler angle(d) and position(m)
+    pos2: [-90.0, 90.0, 90.0, 0.4, -0.109, 0.6]
+    pos3: [-90.0, 90.0, 90.0, 0.4, -0.3, 0.6]
+    pos4: [-90.0, 90.0, 90.0, 0.4, -0.3, 0.3]
     
     joints:
       - shoulder_pan_joint
@@ -32,7 +18,7 @@ publisher_inverse_kinematics_controller:
       - wrist_2_joint
       - wrist_3_joint
 
-    check_starting_point: false
+    check_starting_point: true
     starting_point_limits:
       shoulder_pan_joint: [-0.1,0.1]
       shoulder_lift_joint: [-1.6,-1.5]
