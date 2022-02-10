@@ -5,7 +5,7 @@ publisher_end_effector_cartesian_move_controller:
     wait_sec_between_publish: 1.2
 
     goal_names: ["pos1"]
-    pos1: [-89.9, -179.9, -59.9, 0.2, -0.109, 0.3]   #ZYZ Euler angle(d) and position(m)
+    pos1: [-0.0, 135.0, -5.0, 0.65, -0.11, 0.35]   #ZYZ Euler angle(d) and position(m)
 
     joints:
       - shoulder_pan_joint
