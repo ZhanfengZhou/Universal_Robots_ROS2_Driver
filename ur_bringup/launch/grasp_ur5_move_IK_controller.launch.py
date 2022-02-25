@@ -25,7 +25,7 @@ from launch_ros.substitutions import FindPackageShare
 def generate_launch_description():
 
     position_goals = PathJoinSubstitution(
-        [FindPackageShare("ur_bringup"), "config", "grasp_multiobjects_ur5_move_IK_controller.yaml"]
+        [FindPackageShare("ur_bringup"), "config", "grasp_ur5_move_IK_controller.yaml"]
     )
 
     return LaunchDescription(
