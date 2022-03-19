@@ -1,0 +1,79 @@
+publisher_inverse_kinematics_controller:
+  ros__parameters:
+
+    controller_name: "joint_trajectory_controller"
+    wait_sec_between_publish: 8
+    moving_duration_time: 6
+
+    goal_names: ["pos1", "pos2", "pos3", "pos4", "pos5", "pos6", "pos7", "pos8", "pos9", "pos10", "pos11", "pos12"]
+    #ZYZ Euler angle(d) and position(m)
+    pos1: [-90.0, 179.9, 0.0, 0.5, -0.10, 0.3]  
+    pos2: [0.0, 162.5, 90.0, 0.5, -0.10, 0.1]  #tilt grasp
+    #pos3: [0.0, 162.5, 90.0, 0.5, -0.10, 0.005]    # strawberry, banana
+    #pos4: [0.0, 162.5, 90.0, 0.5, -0.10, 0.005] 
+    pos3: [0.0, 162.5, 90.0, 0.5, -0.10, 0.007]    # egg pick
+    pos4: [0.0, 162.5, 90.0, 0.5, -0.10, 0.007]
+    pos5: [-90.0, 179.9, 0.0, 0.5, -0.10, 0.2] 
+    #pos6: [0.0, 162.5, 90.0, 0.5, -0.10, 0.006]    #tilt grasp: strawberry, banana
+    #pos6: [0.0, 162.5, 90.0, 0.5, -0.10, 0.007]    #tilt grasp: egg place
+    #pos7: [0.0, 162.5, 90.0, 0.5, -0.10, 0.1]
+    pos6: [25.0, 90.0, 0.0, 0.47, 0.17, 0.2]     #facing left
+    pos7: [25.0, 90.0, 0.0, 0.47, 0.17, -0.005]   #keep
+    pos8: [25.0, 90.0, 0.0, 0.47, 0.17, 0.2]   #facing left up 2
+    pos9: [-90.0, 179.9, 0.0, 0.5, -0.10, 0.3]
+    pos10: [-90.0, 179.9, 0.0, 0.5, -0.10, 0.3]
+    pos11: [-90.0, 179.9, 0.0, 0.5, -0.10, 0.3]
+    pos12: [-90.0, 179.9, 0.0, 0.5, -0.10, 0.3]
+    
+    
+    joints:
+      - shoulder_pan_joint
+      - shoulder_lift_joint
+      - elbow_joint
+      - wrist_1_joint
+      - wrist_2_joint
+      - wrist_3_joint
+
+    check_starting_point: false
+    starting_point_limits:
+      shoulder_pan_joint: [-0.1,0.1]
+      shoulder_lift_joint: [-1.6,-1.5]
+      elbow_joint: [-0.1,0.1]
+      wrist_1_joint: [-1.6,-1.5]
+      wrist_2_joint: [-0.1,0.1]
+      wrist_3_joint: [-0.1,0.1]
+
+
+
+
+
+
+
+publisher_joint_trajectory_controller:
+  ros__parameters:
+
+    controller_name: "joint_trajectory_controller"
+    wait_sec_between_publish: 6
+
+    goal_names: ["pos1", "pos2", "pos3", "pos4"]
+    pos1: [0.785, -1.57, 0.785, 0.785, 0.785, 0.785]
+    pos2: [0.0, -1.57, 0.0, 0.0, 0.0, 0.0]
+    pos3: [0.0, -1.57, 0.0, 0.0, -0.785, 0.0]
+    pos4: [0.0, -1.57, 0.0, 0.0, 0.0, 0.0]
+
+    joints:
+      - shoulder_pan_joint
+      - shoulder_lift_joint
+      - elbow_joint
+      - wrist_1_joint
+      - wrist_2_joint
+      - wrist_3_joint
+
+    check_starting_point: true
+    starting_point_limits:
+      shoulder_pan_joint: [-0.1,0.1]
+      shoulder_lift_joint: [-1.6,-1.5]
+      elbow_joint: [-0.1,0.1]
+      wrist_1_joint: [-1.6,-1.5]
+      wrist_2_joint: [-0.1,0.1]
+      wrist_3_joint: [-0.1,0.1]

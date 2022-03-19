@@ -1,0 +1,45 @@
+publisher_inverse_kinematics_controller:
+  ros__parameters:
+
+    controller_name: "joint_trajectory_controller"
+    wait_sec_between_publish: 8
+    moving_duration_time: 6
+
+    goal_names: ["pos1", "pos2", "pos3", "pos4", "pos5", "pos6", "pos7", "pos8", "pos9", "pos10","pos11", "pos12", "pos13"]
+    #ZYZ Euler angle(d) and position(m)
+    pos1: [-90.0, 179.9, 0.0, 0.45, -0.10, 0.25]  
+    #pos2: [0.0, 167.0, 90.0, 0.45, -0.10, 0.165]  #vertial grasp, tall bottle
+    #pos3: [0.0, 167.0, 90.0, 0.45, -0.10, 0.26]    #pick
+    #pos4: [0.0, 167.0, 90.0, 0.45, -0.10, 0.16]    #place
+    #pos5: [0.0, 167.0, 90.0, 0.45, -0.10, 0.165]    #rotate
+    pos2: [0.0, 165.0, 90.0, 0.45, -0.10, 0.080]  #vertial grasp, small bottle
+    pos3: [0.0, 165.0, 90.0, 0.45, -0.10, 0.11]    #pick
+    pos4: [0.0, 165.0, 90.0, 0.45, -0.10, 0.078]    #place
+    pos5: [0.0, 165.0, 90.0, 0.45, -0.10, 0.085]    #rotate
+    pos6: [0.0, 165.0, 90.0, 0.45, -0.10, 0.085] 
+    pos7: [0.0, 165.0, 90.0, 0.45, -0.10, 0.085]
+    pos8: [0.0, 165.0, 90.0, 0.45, -0.10, 0.085]
+    pos9: [0.0, 165.0, 90.0, 0.45, -0.10, 0.085]
+    pos10: [0.0, 165.0, 90.0, 0.45, -0.10, 0.085]     #lift
+    pos11: [0.0, 165.0, 90.0, 0.45, -0.10, 0.085] 
+    pos12: [0.0, 165.0, 90.0, 0.45, -0.10, 0.16]
+    pos13: [0.0, 165.0, 90.0, 0.45, -0.10, 0.16]
+    
+    
+    joints:
+      - shoulder_pan_joint
+      - shoulder_lift_joint
+      - elbow_joint
+      - wrist_1_joint
+      - wrist_2_joint
+      - wrist_3_joint
+
+    check_starting_point: false
+    starting_point_limits:
+      shoulder_pan_joint: [-0.1,0.1]
+      shoulder_lift_joint: [-1.6,-1.5]
+      elbow_joint: [-0.1,0.1]
+      wrist_1_joint: [-1.6,-1.5]
+      wrist_2_joint: [-0.1,0.1]
+      wrist_3_joint: [-0.1,0.1]
+

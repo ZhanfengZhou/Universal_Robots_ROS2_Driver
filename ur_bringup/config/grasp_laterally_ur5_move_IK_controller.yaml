@@ -1,0 +1,101 @@
+publisher_inverse_kinematics_controller:
+  ros__parameters:
+
+    controller_name: "joint_trajectory_controller"
+    #wait_sec_between_publish: 10
+    #moving_duration_time: 8
+    wait_sec_between_publish: 8
+    moving_duration_time: 6
+
+    goal_names: ["pos1", "pos2", "pos3", "pos4", "pos5", "pos6", "pos7", "pos8", "pos9", "pos10", "pos11", "pos12"]
+    #ZYZ Euler angle(d) and position(m)
+    #pos1: [-90.0, 179.9, 0.0, 0.6, -0.10, 0.3]  
+    pos1: [-0.0, 90.0, 180.0, 0.5, -0.10, 0.3]   #facing forward
+    pos2: [-0.0, 90.0, 180.0, 0.5, -0.10, 0.3]   #facing forward
+    pos3: [-0.0, 90.0, 180.0, 0.5, -0.115, 0.07]   #facing forward down, spraying water
+    pos4: [-0.0, 90.0, 180.0, 0.54, -0.085, 0.07]
+    #pos3: [-0.0, 90.0, 180.0, 0.5, -0.115, -0.018]   #facing forward down, wine_bottle, chips_can
+    #pos4: [-0.0, 90.0, 180.0, 0.55, -0.10, -0.018]   #keep
+    #pos3: [-0.0, 90.0, 180.0, 0.5, -0.10, -0.015]   #facing forward down, mustard
+    #pos4: [-0.0, 90.0, 180.0, 0.54, -0.10, -0.015]   #keep
+    #pos3: [-0.0, 90.0, 180.0, 0.5, -0.10, -0.015]   #facing forward down, cheezit
+    #pos4: [-0.0, 90.0, 180.0, 0.555, -0.10, -0.015]   #keep
+    #pos3: [-0.0, 90.0, 180.0, 0.5, -0.10, -0.029]   #facing forward down, tomata_soup_can coke_can
+    #pos4: [-0.0, 90.0, 180.0, 0.555, -0.10, -0.029]   #keep
+    pos5: [-0.0, 90.0, 180.0, 0.54, -0.09, 0.3]   #facing forward up
+    pos6: [-0.0, 90.0, 180.0, 0.54, -0.09, 0.3]   #facing forward up
+    pos7: [-0.0, 90.0, 180.0, 0.54, -0.09, 0.3]   #facing forward up
+    #pos6: [25.0, 90.0, 180.0, 0.48, 0.2, 0.2]   #facing left
+    #pos6: [-0.0, 90.0, 124.0, 0.54, -0.10, 0.2]   # rotate wrist to pour wine
+    #pos7: [25.0, 90.0, 180.0, 0.48, 0.2, 0.035]   #facing left down 2, wine_bottle, chips_can
+    #pos8: [25.0, 90.0, 180.0, 0.46, 0.185, 0.035]   #keep
+    #pos7: [25.0, 90.0, 180.0, 0.51, 0.2, -0.013]   #facing left down 2, mustard
+    #pos8: [25.0, 90.0, 180.0, 0.49, 0.185, -0.013]   #keep
+    #pos7: [25.0, 90.0, 180.0, 0.51, 0.2, -0.012]   #facing left down 2, cheezit
+    #pos8: [25.0, 90.0, 180.0, 0.49, 0.185, -0.012]   #keep
+    #pos7: [25.0, 90.0, 180.0, 0.51, 0.2, -0.028]   #facing left down 2,tomato_soup_can coke_can
+    #pos8: [25.0, 90.0, 180.0, 0.49, 0.185, -0.028]   #keep
+    #pos7: [-0.0, 90.0, 124.0, 0.54, -0.10, 0.2]   # pour wine
+    #pos8: [-0.0, 90.0, 124.0, 0.54, -0.10, 0.2]   # pour wine
+    #pos9: [25.0, 90.0, 180.0, 0.4, 0.10, 0.2]   #facing left up 2
+    #pos10: [-0.0, 90.0, 180.0, 0.55, -0.10, 0.2]
+    #pos9: [-0.0, 90.0, 180.0, 0.54, -0.10, 0.2]   # pour wine finished
+    #pos10: [-0.0, 90.0, 180.0, 0.55, -0.115, -0.018]   #place wine bottle
+    pos8: [-0.0, 90.0, 180.0, 0.55, -0.115, 0.07]   #place spraying bottle
+    pos9: [-0.0, 90.0, 180.0, 0.54, -0.10, 0.3]
+    pos10: [-0.0, 90.0, 180.0, 0.54, -0.10, 0.3]
+    pos11: [-0.0, 90.0, 180.0, 0.54, -0.10, 0.3]
+    pos12: [-90.0, 179.9, 0.0, 0.45, -0.10, 0.3]
+    
+    
+    joints:
+      - shoulder_pan_joint
+      - shoulder_lift_joint
+      - elbow_joint
+      - wrist_1_joint
+      - wrist_2_joint
+      - wrist_3_joint
+
+    check_starting_point: false
+    starting_point_limits:
+      shoulder_pan_joint: [-0.1,0.1]
+      shoulder_lift_joint: [-1.6,-1.5]
+      elbow_joint: [-0.1,0.1]
+      wrist_1_joint: [-1.6,-1.5]
+      wrist_2_joint: [-0.1,0.1]
+      wrist_3_joint: [-0.1,0.1]
+
+
+
+
+
+
+
+publisher_joint_trajectory_controller:
+  ros__parameters:
+
+    controller_name: "joint_trajectory_controller"
+    wait_sec_between_publish: 6
+
+    goal_names: ["pos1", "pos2", "pos3", "pos4"]
+    pos1: [0.785, -1.57, 0.785, 0.785, 0.785, 0.785]
+    pos2: [0.0, -1.57, 0.0, 0.0, 0.0, 0.0]
+    pos3: [0.0, -1.57, 0.0, 0.0, -0.785, 0.0]
+    pos4: [0.0, -1.57, 0.0, 0.0, 0.0, 0.0]
+
+    joints:
+      - shoulder_pan_joint
+      - shoulder_lift_joint
+      - elbow_joint
+      - wrist_1_joint
+      - wrist_2_joint
+      - wrist_3_joint
+
+    check_starting_point: true
+    starting_point_limits:
+      shoulder_pan_joint: [-0.1,0.1]
+      shoulder_lift_joint: [-1.6,-1.5]
+      elbow_joint: [-0.1,0.1]
+      wrist_1_joint: [-1.6,-1.5]
+      wrist_2_joint: [-0.1,0.1]
+      wrist_3_joint: [-0.1,0.1]
